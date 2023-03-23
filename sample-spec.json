@@ -1,0 +1,55 @@
+{
+	"$id": "https://example.com/schemas/customer",
+	"type": "object",
+	"properties": {
+		"first_name": {
+			"$ref": "#/$defs/name"
+		},
+		"last_name": {
+			"$ref": "#/$defs/name"
+		},
+		"shipping_address": {
+			"$ref": "#/$defs/address"
+		},
+		"billing_address": {
+			"$ref": "#/$defs/address"
+		}
+	},
+	"required": [
+		"first_name",
+		"last_name",
+		"shipping_address",
+		"billing_address"
+	],
+	"$defs": {
+		"name": {
+			"type": "string"
+		},
+		"address": {
+			"$id": "/schemas/address",
+			"$schema": "http://json-schema.org/draft-07/schema#",
+			"type": "object",
+			"properties": {
+				"street_address": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string",
+					"enum": [
+						"CA",
+						"NY",
+						"... etc ..."
+					]
+				}
+			},
+			"required": [
+				"street_address",
+				"city",
+				"state"
+			]
+		}
+	}
+}

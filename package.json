@@ -1,0 +1,13 @@
+{
+    "name": "json-schema-flatten",
+    "version": "1.0.0",
+    "description": "A tool to flatten JSON schema by resolving all the $ref references",
+    "main": "flatten-schema.js",
+    "scripts": {
+      "start": "node flatten-schema.js"
+    },
+    "dependencies": {
+      "json-schema-ref-parser": "^9.0.9"
+    }
+  }
+  
